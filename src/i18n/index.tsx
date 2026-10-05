@@ -1,6 +1,66 @@
 import { createContext, useContext, type ReactNode } from 'react';
 
-const messages = { title: '野外巡护离线调查', sync: '同步队列', review: '负责人复核', save: '保存现场记录' };
+const messages = {
+  title: '野外巡护离线调查',
+  roleRanger: '巡护员',
+  roleManager: '负责人',
+  sync: '同步队列',
+  syncNow: '同步未传完记录',
+  syncing: '同步中…',
+  retryFailed: '重试未传完记录',
+  review: '负责人复核',
+  verify: '样本核验',
+  reviewSample: '样本复核',
+  save: '保存现场记录',
+  addObservation: '新增观察记录',
+  addPoint: '新增轨迹点',
+  addSample: '新增样本',
+  note: '现场情况',
+  risk: '风险等级',
+  riskLow: '低',
+  riskMedium: '中',
+  riskHigh: '高',
+  latitude: '纬度',
+  longitude: '经度',
+  code: '样本编号',
+  species: '物种',
+  count: '数量',
+  pointId: '关联轨迹点',
+  noPoint: '不关联',
+  status: '状态',
+  statusDraft: '草稿',
+  statusSubmitted: '已提交',
+  statusVerified: '已核验',
+  syncLocal: '本地',
+  syncQueued: '待上传',
+  syncUploading: '上传中',
+  syncSynced: '已同步',
+  syncConflict: '冲突待确认',
+  syncFailed: '失败待重试',
+  fieldConflict: '字段冲突',
+  keepBoth: '两边各执一份，待负责人确认',
+  localVersion: '本地版本',
+  serverVersion: '站里版本',
+  chooseLocal: '取本地',
+  chooseServer: '取站里',
+  reviewed: '已复核',
+  notReviewed: '未复核',
+  verificationNormal: '核验正常',
+  verificationAbnormal: '核验异常',
+  verificationNone: '未核验',
+  emptyObservations: '暂无观察记录',
+  emptyPoints: '暂无轨迹点',
+  emptySamples: '暂无样本',
+  observations: '观察记录',
+  points: '轨迹点',
+  samples: '样本',
+  roleSwitch: '当前身份',
+  rejectionTitle: '越权拒绝',
+  coordinateChanged: '坐标变更将作废样本核验',
+};
+
 const I18nContext = createContext(messages);
-export function I18nProvider({ children }: { children: ReactNode }) { return <I18nContext.Provider value={messages}>{children}</I18nContext.Provider>; }
+export function I18nProvider({ children }: { children: ReactNode }) {
+  return <I18nContext.Provider value={messages}>{children}</I18nContext.Provider>;
+}
 export const useI18n = () => useContext(I18nContext);

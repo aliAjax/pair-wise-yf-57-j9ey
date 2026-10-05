@@ -12,6 +12,21 @@ Taro 3 + React + TypeScript + NutUI + Redux Toolkit + RTK Query + React Hook For
 - 离线队列、模拟联网同步、记录级冲突选择本地或合并云端意见。
 - Taro 本地存储持久化和移动端布局。
 
+## 同步与合并规则
+- **逐条合并**：联网后逐条上传未同步记录（观察、轨迹点、样本）。
+- **字段级三向合并**：以「上次同步快照 base / 本地离线 local / 站里版本 server」三方比对。本地没动的字段跟站里走；只有本地改的取本地；两边改到同一字段且值不同 → 留两份内容等负责人确认；两边改到一样 → 取该值。
+- **幂等**：已同步记录重复上传不会多出一份（按 id upsert，synced 记录跳过）。
+- **坐标联动**：轨迹点坐标一变，关联样本的核验结论作废（verification 清空、状态退回已提交），负责人复核也要重新确认。
+- **失败重试**：模拟弱网首次上传失败，记录标记 failed；下次只重试没传完的记录，已传的不重传。
+- **越权拒绝**：巡护员执行复核/核验/确认冲突时一律拒绝并提示，仅负责人可操作。
+
+## 目录
+- `src/sync/types.ts` — 领域类型与状态定义。
+- `src/sync/merge.ts` — 三向字段合并与冲突确认。
+- `src/sync/engine.ts` — 同步计划、失败模拟、核验结论重算。
+- `src/store/index.ts` — Redux Toolkit store 与同步 thunk。
+- `src/pages/index/index.tsx` — 主页面（移动端布局）。
+
 ## 启动
 ```bash
 npm install

@@ -8,7 +8,7 @@ export default defineConfig({
   sourceRoot: 'src',
   outputRoot: 'dist',
   framework: 'react',
-  compiler: 'webpack5',
+  compiler: { type: 'webpack5', prebundle: { enable: false } },
   cache: { enable: false },
   plugins: ['@tarojs/plugin-platform-h5'],
   h5: {
