@@ -1,1 +1,61 @@
-.page { padding: 24px; max-width: 760px; margin: 0 auto; }.hero { padding: 24px; border-radius: 20px; background: linear-gradient(135deg, #14532d, #166534); color: white; }.eyebrow { display: block; font-size: 12px; letter-spacing: .12em; color: #bbf7d0; }.title { display: block; font-size: 28px; font-weight: 760; margin: 8px 0; }.sub { color: #dcfce7; }.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 18px 0; }.metrics > View { padding: 14px; background: white; border-radius: 14px; }.metric { display: block; font-size: 26px; font-weight: 760; margin-top: 5px; }.metric.warn { color: #b45309; }.card { padding: 18px; margin-bottom: 16px; border-radius: 16px; background: white; }.card-title { display: flex; justify-content: space-between; font-size: 18px; font-weight: 720; margin-bottom: 14px; }.count { color: #15803d; }.textarea, .input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 11px; margin-bottom: 10px; box-sizing: border-box; }.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }.risk { display: flex; justify-content: space-between; align-items: center; margin: 6px 0 14px; }.primary, .secondary { width: 100%; margin-top: 8px; border-radius: 10px; }.primary { background: #166534; color: white; }.secondary { background: #ecfdf5; color: #166534; }.alert { padding: 14px; border-radius: 12px; }.conflict { background: #fff7ed; color: #9a3412; }.alert-actions { display: flex; gap: 8px; margin-top: 12px; }.hint, .muted { color: #64748b; font-size: 13px; display: block; }.list { max-height: 380px; }.observation, .sample { display: flex; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px solid #e5e7eb; }.obs-title { display: block; font-weight: 650; margin-bottom: 5px; }
+.page { padding: 24px; max-width: 760px; margin: 0 auto; background: #f6f8f7; min-height: 100vh; box-sizing: border-box; }
+.hero { padding: 24px; border-radius: 20px; background: linear-gradient(135deg, #14532d, #166534); color: white; }
+.eyebrow { display: block; font-size: 12px; letter-spacing: .12em; color: #bbf7d0; }
+.title { display: block; font-size: 28px; font-weight: 760; margin: 8px 0; }
+.sub { color: #dcfce7; font-size: 14px; line-height: 1.6; }
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0; }
+.metrics > View { padding: 14px; background: white; border-radius: 14px; }
+.metric { display: block; font-size: 24px; font-weight: 760; margin-top: 5px; }
+.metric.warn { color: #b45309; }
+.metric.danger { color: #b91c1c; }
+.card { padding: 18px; margin-bottom: 16px; border-radius: 16px; background: white; }
+.card-title { display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: 720; margin-bottom: 14px; }
+.count { color: #15803d; font-size: 13px; font-weight: 600; }
+.card-label { font-size: 14px; color: #334155; font-weight: 650; }
+.control-card { display: flex; flex-direction: column; gap: 12px; }
+.role-switch { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.seg { display: flex; gap: 8px; }
+.seg .seg-on { background: #166534; color: #fff; border-color: #166534; }
+.textarea, .input { width: 100%; border: 1px solid #d1d5db; border-radius: 10px; padding: 11px; margin-bottom: 10px; box-sizing: border-box; font-size: 14px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.risk { display: flex; justify-content: space-between; align-items: center; margin: 6px 0 14px; }
+.primary, .secondary { width: 100%; margin-top: 8px; border-radius: 10px; }
+.primary { background: #166534; color: white; }
+.secondary { background: #ecfdf5; color: #166534; margin-left: 0; }
+.secondary { margin-left: 0; }
+.alert { padding: 14px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; }
+.notice { background: #eff6ff; color: #1e40af; }
+.report { display: block; white-space: pre-line; background: #f0fdf4; color: #14532d; border-radius: 10px; padding: 10px 12px; font-size: 13px; margin: 10px 0; line-height: 1.6; }
+.hint, .muted { color: #64748b; font-size: 13px; display: block; line-height: 1.6; }
+.list { max-height: 420px; }
+.record { display: flex; justify-content: space-between; gap: 12px; padding: 13px 0; border-bottom: 1px solid #e5e7eb; }
+.record-main { flex: 1; min-width: 0; }
+.obs-title { display: block; font-weight: 650; margin-bottom: 5px; font-size: 15px; word-break: break-all; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; background: #f1f5f9; color: #475569; }
+.tag-queued { background: #fef3c7; color: #92400e; }
+.tag-failed { background: #fee2e2; color: #991b1b; }
+.tag-conflict { background: #ffedd5; color: #9a3412; font-weight: 700; }
+.tag-synced { background: #dcfce7; color: #166534; }
+.tag-dirty { background: #e0f2fe; color: #075985; }
+.tag-reviewed { background: #dcfce7; color: #166534; }
+.tag-pending { background: #f1f5f9; color: #475569; }
+.review-btn { color: #166534; border-color: #166534; flex-shrink: 0; }
+.done { color: #15803d; flex-shrink: 0; }
+.ghost { margin-top: 6px; color: #0369a1 !important; border-color: #bae6fd !important; }
+.inline-edit { margin-top: 8px; }
+.inline-actions { display: flex; gap: 8px; }
+.verify-note { display: block; font-size: 13px; color: #7c2d12; background: #fff7ed; border-radius: 8px; padding: 8px 10px; margin: 6px 0; line-height: 1.6; }
+.conflict-card { border: 1px solid #fdba74; }
+.conflict-block { padding: 12px; background: #fff7ed; border-radius: 12px; margin-bottom: 10px; }
+.conflict-head { font-weight: 700; color: #9a3412; font-size: 14px; }
+.conflict-field { margin-top: 8px; padding-top: 8px; border-top: 1px dashed #fdba74; }
+.conflict-name { font-size: 13px; color: #9a3412; }
+.conflict-versions { display: flex; flex-direction: column; gap: 4px; margin: 6px 0; }
+.version { font-size: 13px; padding: 6px 10px; border-radius: 8px; }
+.version-local { background: #e0f2fe; color: #075985; }
+.version-remote { background: #fef9c3; color: #854d0e; }
+.conflict-actions { display: flex; gap: 8px; }
+.deny-hint { font-size: 12px; color: #b91c1c; }
+.station-card Button { margin-top: 8px; }
+.danger-ghost { background: #fef2f2 !important; color: #b91c1c !important; }
